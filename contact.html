@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Slimeball Realty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo neon-title">Catalyst Real Estate</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact">
+      <h1 class="neon-title">Get in Touch</h1>
+      <form
+        action="https://formspree.io/f/xovdqoyp"
+        method="POST"
+        style="max-width:500px; margin:0 auto;"
+      >
+        <!-- Name -->
+        <label>Name</label>
+        <input type="text" name="name" required />
+  
+        <!-- Email (so you know who sent it) -->
+        <label>Email</label>
+        <input type="email" name="_replyto" required />
+  
+        <!-- Message -->
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
+  
+        <!-- Optional: customize the email subject -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="New message from your Catalyst site"
+        />
+  
+        <!-- Optional: skip Formspree’s captcha -->
+        <input type="hidden" name="_captcha" value="false" />
+  
+        <!-- Optional: send them to a thank-you page -->
+        <input
+          type="hidden"
+          name="_next"
+          value="https://yourdomain.com/thanks.html"
+        />
+  
+        <div class="form-buttons">
+          <button type="submit" class="btn-neon">Send Message</button>
+  
+          <div class="social-icons">
+            <a href="https://www.facebook.com/share/1FGe2vu9s1/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://www.zillow.com/profile/flocchristian" target="_blank" aria-label="Zillow">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zillow.svg" alt="Zillow" />
+            </a>
+          </div>
+        </div>
+        
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <img src="pics/Catalyst.png" alt="Catalyst Logo" class="footer-logo">
+  
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>
+          📞 <a href="tel:19154903639">(915) 490-3639</a>
+        </p>
+        <p>
+          ✉️ <a href="mailto:flocchristian@gmail.com">flocchristian@gmail.com</a>
+        </p>
+        <p>License Number: 835498</p>
+      </div>
+      
+    </div>
+  </footer>
+</body>
+</html>

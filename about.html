@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Panel styling */
+    .about-panel {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid var(--logo-color);
+      box-shadow: 0 0 10px var(--logo-color);
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 3rem auto;
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-panel:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px var(--logo-color);
+    }
+    /* Adjust headshot sizing */
+    .headshot {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0;
+      border: 4px solid var(--logo-color);
+    }
+    /* Text content adjusts within panel */
+    .about-content {
+      color: var(--logo-color);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo neon-title">Catalyst Real Estate</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="about-panel">
+        <img src="pics/headshot.jpg" alt="Christian Flores" class="headshot">
+        <div class="about-content">
+          <h1 class="neon-title">Christian Flores</h1>
+
+          <p>Meet Christian Flores, a dedicated and passionate realtor who embodies honesty and integrity in every transaction. With a clean-hearted approach to real estate, Christian understands that buying or selling a home is one of life's most significant milestones, and he is committed to making the process as smooth and rewarding as possible for his clients.</p>
+
+          <p>As a young and aspiring professional, Christian brings a fresh perspective to the real estate market. His strong work ethic drives him to go above and beyond for his clients, ensuring that their needs are met with the utmost care and attention. Christian is not just a realtor; he is a trusted advisor who listens to his clients and guides them through each step with transparency and compassion.</p>
+
+          <p>Whether you're a first-time homebuyer or looking to sell your property, Christian's dedication and enthusiasm will put you at ease. With an unwavering commitment to achieving the best outcomes, he is ready to help you turn your real estate dreams into reality. Let Christian Flores show you what a genuine and hardworking realtor can do for you!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <img src="pics/Catalyst.png" alt="Catalyst Logo" class="footer-logo">
+  
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>
+          📞 <a href="tel:19154903639">(915) 490-3639</a>
+        </p>
+        <p>
+          ✉️ <a href="mailto:flocchristian@gmail.com">flocchristian@gmail.com</a>
+        </p>
+        <p>License Number: 835498</p>
+      </div>
+      
+    </div>
+  </footer>
+</body>
+</html>

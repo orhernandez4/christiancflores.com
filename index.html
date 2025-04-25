@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slime</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo neon-title">Catalyst Real Estate</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="hero">
+      <h1 class="neon-title">Find Your Dream Home</h1>
+      <p style="text-align:center; max-width:600px; margin:0 auto;">
+        With honesty, integrity, and a tireless work ethic, Christian guides you through every step of buying or selling a home—making your journey smooth, transparent, and ultimately rewarding.
+    </p>
+      <div style="text-align:center;">
+        <a href="contact.html" class="btn-neon">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+  <section id="listings">
+    <h2 class="neon-title">Available Listings</h2>
+    <div class="listing-slider">
+      <div class="slides">
+        <a href="https://my.flexmls.com/Christian18/search/shared_links/C2ZLZ/listings/20250113192856483544000000"  target="_blank">
+          <img src="pics/house1.webp" alt="Listing 1">
+        </a>
+        <a href="https://my.flexmls.com/Christian18/search/shared_links/C2ZKj/listings/20250307205947787170000000" target="_blank">
+          <img src="pics/house2.webp" alt="Listing 2">
+        </a>
+        <a href="https://my.flexmls.com/Christian18/search/shared_links/C2ZLH/listings/20250204212533927259000000" target="_blank">
+          <img src="pics/house3.webp" alt="Listing 3">
+        </a>
+      </div>
+    </div>
+    <div class="listing-info">
+      <p id="listing-location" class="listing-location"></p>
+    </div>
+  
+  </section>
+  
+
+  
+
+  <footer>
+    <div class="footer-content">
+      <img src="pics/Catalyst.png" alt="Catalyst Logo" class="footer-logo">
+  
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>
+          📞 <a href="tel:19154903639">(915) 490-3639</a>
+        </p>
+        <p>
+          ✉️ <a href="mailto:flocchristian@gmail.com">flocchristian@gmail.com</a>
+        </p>
+        <p>License Number: 835498</p>
+      </div>
+      
+    </div>
+  </footer>
+  <!-- …your footer here… -->
+
+  <!-- Slideshow JS: put this right before </body> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slider         = document.querySelector('.listing-slider');
+      const slidesContainer= slider.querySelector('.slides');
+      const slides         = slidesContainer.querySelectorAll('a');
+      const locationEl     = document.getElementById('listing-location');
+  
+      // 🏷️ Put your real addresses here, in the same order as your <a> slides
+      const locations = [
+        '7762 Enchanted Ridge dr., El Paso, TX, 79911',
+        '248 Hunstanton st., Horizon City, TX, 79928',
+        '869 Eastwell dr., Horizon City, TX, 79928'
+      ];
+  
+      let currentIndex = 0;
+      let slideWidth   = slider.clientWidth;
+  
+      // 1) Size the container to fit all slides side by side
+      slidesContainer.style.width = `${slideWidth * slides.length}px`;
+  
+      // 2) Make each slide exactly the slider’s width
+      slides.forEach(slide => {
+        slide.style.width = `${slideWidth}px`;
+        slide.style.flex  = '0 0 auto';
+      });
+  
+      // 3) Initialize the caption
+      locationEl.textContent = locations[currentIndex];
+  
+      // 4) Auto-advance every 5s & update caption
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        slidesContainer.style.transform =
+          `translateX(-${currentIndex * slideWidth}px)`;
+        locationEl.textContent = locations[currentIndex];
+      }, 5000);
+  
+      // 5) Recalc on resize (so it stays perfect on mobile/desktop)
+      window.addEventListener('resize', () => {
+        slideWidth = slider.clientWidth;
+        slidesContainer.style.width = `${slideWidth * slides.length}px`;
+        slides.forEach(slide => slide.style.width = `${slideWidth}px`);
+        slidesContainer.style.transform =
+          `translateX(-${currentIndex * slideWidth}px)`;
+      });
+    });
+  </script>
+  
+</body>
+</html>
+
+</body>
+</html>

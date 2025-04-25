@@ -1,0 +1,295 @@
+:root {
+    --bg: #0a0a0a;
+    --logo-color: #39ff14;   /* your logo2 color */
+    --font: 'Orbitron', sans-serif;
+  }
+  
+  /* —— reset & base —— */
+  * {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+  }
+  
+  body {
+    background: var(--bg);
+    color: var(--logo-color);
+    font-family: var(--font);
+    line-height: 1.6;
+    position: relative;
+    z-index: 0;
+  }
+  
+  /* watermark */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 50%; left: 50%;
+    width: 120vmin; height: 120vmin;
+    transform: translate(-50%, -50%);
+    background: url('pics/logo2.png') center/contain no-repeat;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  a {
+    color: var(--logo-color);
+    text-decoration: none;
+  }
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  nav a:hover {
+    text-shadow:
+      0 0 5px var(--logo-color),
+      0 0 10px var(--logo-color),
+      0 0 20px var(--logo-color);
+  }
+  
+  /* header */
+  header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* neon titles/buttons */
+  .neon-title {
+    font-size: 3rem;
+    color: var(--logo-color);
+    text-shadow:
+      0 0 5px var(--logo-color),
+      0 0 10px var(--logo-color),
+      0 0 20px var(--logo-color),
+      0 0 30px var(--logo-color);
+    animation: flicker 1.5s infinite;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  @keyframes flicker {
+    0%,18%,22%,25%,53%,57%,100% { opacity: 1; }
+    20%,24%,55%               { opacity: 0.8; }
+  }
+  
+  .btn-neon {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem 0;
+    background: var(--logo-color);
+    color: var(--bg);
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    box-shadow:
+      0 0 5px var(--logo-color),
+      0 0 10px var(--logo-color),
+      0 0 20px var(--logo-color);
+    cursor: pointer;
+    transition: transform .2s, filter .2s;
+  }
+  .btn-neon:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  
+  /* sections */
+  section {
+    padding: 2rem 2rem;
+  }
+  
+  /* headshot on About */
+  .headshot {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 4px solid var(--logo-color);
+  }
+  
+  /* contact form */
+  input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1rem;
+    background: #111;
+    border: 1px solid var(--logo-color);
+    border-radius: 4px;
+    color: var(--logo-color);
+    outline: none;
+  }
+  input:focus, textarea:focus {
+    box-shadow: 0 0 8px var(--logo-color);
+  }
+  
+  /* footer */
+
+  
+  footer {
+    padding: 2rem;
+    border-top: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+  
+  
+  
+  
+  
+  
+  .footer-logo {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 0 5px var(--logo-color));
+  }
+  
+  .footer-contact {
+    color: var(--logo-color);
+    text-align: right;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+  .footer-contact h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .form-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .social-icons img {
+    width: 36px;
+    height: 36px;
+    filter: drop-shadow(0 0 5px var(--logo-color));
+    fill: var(--logo-color);
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  .social-icons svg,
+  .social-icons img {
+    color: var(--logo-color);
+  }
+    
+  
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px var(--logo-color));
+  }
+  #listings {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--logo-color);
+    box-shadow: 0 0 15px var(--logo-color);
+    border-radius: 8px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    backdrop-filter: blur(5px);
+  }
+  
+  .listing-slider {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16/9;      /* <-- responsive height = width * 9/16 */
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* cover instead of contain for full-frame fills */
+    background-color: #000;
+    border-right: 2px solid #111;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .listing-info {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .listing-location {
+    color: var(--logo-color);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  @media (max-width: 600px) {
+    footer {
+      padding: 1rem;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .footer-logo {
+      width: 140px;       /* slightly smaller on mobile */
+      margin-bottom: 0.5rem;
+    }
+  
+    .footer-contact {
+      text-align: center; /* center the contact info */
+      margin: 0;          /* remove side margins */
+    }
+  
+    .footer-contact p, .footer-contact h4 {
+      margin: 0.2rem 0;   /* compact spacing */
+    }
+    .neon-title {
+      font-size: 2rem;      /* smaller headings on phone */
+      margin: 1.5rem 0;
+    }
+    #listings {
+      padding: 1rem;        /* less gutter on small screens */
+    }
+    .listing-info {
+      margin-top: 0.5rem;
+    }
+    .listing-location {
+      font-size: 0.9rem;
+    }
+  }
+
+  
